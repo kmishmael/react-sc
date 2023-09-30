@@ -4,5 +4,9 @@ export const DefaultButton = styled.button`
 background-color: ${({red}: any) => (red && 'red') || '#645cfc'};
 border: none;
 padding: 10px;
-colort: white;
+color: white;
+`
+export const ExtendedButton = styled(DefaultButton)`
+display: block;
+width: 100vw;
 `
