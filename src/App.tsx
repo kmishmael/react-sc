@@ -1,21 +1,37 @@
 import H1 from "./components/title";
 import { DefaultButton, ExtendedButton } from "./components/button";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+
+const baseTheme = {
+  background: "#fff",
+  color: "#222",
+};
+const darkTheme = {
+  background: "#222",
+  color: "#fff",
+};
+
+const Container = styled.div`
+  color: ${(props) => props.theme.color};
+  background-color: ${(props) => props.theme.background};
+`;
 
 function App() {
   return (
-    <div>
-      <Wrapper>
-        <H1>Styled Components</H1>
-        <p>
-          Cillum culpa deserunt enim et eiusmod quis proident consequat tempor
-          ipsum sunt esse.
-        </p>
-        <DefaultButton>Click ME!</DefaultButton>
-        {/**@ts-ignore */}
-        <ExtendedButton red>Click ME!</ExtendedButton>
-      </Wrapper>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <Container>
+        <Wrapper>
+          <H1>Styled Components</H1>
+          <p>
+            Cillum culpa deserunt enim et eiusmod quis proident consequat tempor
+            ipsum sunt esse.
+          </p>
+          <DefaultButton>Click ME!</DefaultButton>
+          {/**@ts-ignore */}
+          <ExtendedButton red>Click ME!</ExtendedButton>
+        </Wrapper>
+      </Container>
+    </ThemeProvider>
   );
 }
 
