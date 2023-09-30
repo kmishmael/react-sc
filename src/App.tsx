@@ -1,6 +1,7 @@
 import H1 from "./components/title";
 import { DefaultButton, ExtendedButton } from "./components/button";
 import styled, { ThemeProvider } from "styled-components";
+import Loading from "./components/loading";
 
 const baseTheme = {
   background: "#fff",
@@ -22,13 +23,16 @@ function App() {
       <Container>
         <Wrapper>
           <H1>Styled Components</H1>
+          
           <p>
             Cillum culpa deserunt enim et eiusmod quis proident consequat tempor
             ipsum sunt esse.
           </p>
-          <DefaultButton>Click ME!</DefaultButton>
+          <DefaultButton as='a' href="https://www.google.com">Click ME!</DefaultButton>
           {/**@ts-ignore */}
           <ExtendedButton red>Click ME!</ExtendedButton>
+
+          <Loading />
         </Wrapper>
       </Container>
     </ThemeProvider>
